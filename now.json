@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "gatsby-blog",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { 
+        "distDir": "public" 
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+a {
+  color: #353535;
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 23px;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font-sans-serif;
+}
+h1 {
+  margin-bottom: 1rem;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 60px;
+}
+h2 {
+  margin-bottom: 1rem;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 40px;
+}
+h3 {
+  margin-bottom: 1rem;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+p, pre, ul, ol {
+  margin-bottom: 2rem;
+}
+ul, ol {
+  padding-left: 30px;
+}
+ul li, ol li {
+  margin-left: 1em;
+}
+
+pre {
+  white-space: pre-wrap;       // css-3
+  white-space: -moz-pre-wrap;  // Mozilla, since 1999
+  white-space: -pre-wrap;      // Opera 4-6
+  white-space: -o-pre-wrap;    // Opera 7
+  word-wrap: break-word;       // Internet Explorer 5.5+
+}
+
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+
+@media (max-width: $max-width-sm) {
+  h1 {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  h2 {
+    font-size: 28px
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
+  }
+  pre {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+.post-quote {
+  blockquote {
+    margin-bottom: 2rem;
+    display: inline-block;
+    font-style: italic;
+    font-size: 24px;
+    color: #868686;
+
+    @media screen and (min-width: $min-width-emph) {
+      width: 130%;
+      margin: 0 -15% 2rem -15%;
+      font-size: 30px;
+      padding: 0;
+    }
+
+    &:before {
+      content: "« "
+    }
+
+    &:after {
+      content: " »"
+    }
+  }
+}

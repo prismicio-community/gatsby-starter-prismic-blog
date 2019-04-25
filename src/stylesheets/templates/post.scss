@@ -1,0 +1,28 @@
+
+.post-header {
+  padding: 20px;
+
+  .back {
+    color: #9A9A9A;
+    display: block;
+    max-width: 700px;
+    margin: 0 auto 2em auto;
+    font-family: $font-sans-serif;
+    font-size: 16px;
+
+    &:before {
+      content: '←';
+      display: inline-block;
+      position: relative;
+      margin-right: 8px;
+    }
+
+    a {
+      color: #9A9A9A;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.blog-posts {
+  .post-summary {
+    margin-bottom: 3rem;
+
+    h2 {
+      margin: 0;
+      color: #353535;
+      text-align: left;
+    }
+
+    .blog-post-meta {
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-family: $font-sans-serif;
+      color: #9A9A9A;
+    }
+  }
+}

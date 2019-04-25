@@ -1,0 +1,21 @@
+
+.post-text {
+  a {
+    text-decoration: none;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 23px;
+  }
+
+  .block-img {
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      background: none;
+    }
+  }
+}
