@@ -2,6 +2,9 @@
 
 > [Gatsby](https://www.gatsbyjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
+## Check out our article for a step by step guide to getting this project up and running
+
+> [Prismic project guide](https://intercom.help/prismicio/examples/gatsby-js-samples/sample-blog-with-api-based-cms-gatsbyjs)
 
 ## Launch this project in your local environment
 
@@ -21,6 +24,10 @@ Run the following commands to compile the project and launch the server for prod
 npm run build
 npm run serve
 ```
+
+## Learn more about using Prismic with Gatsby.js
+
+> [Prismic Gatsby.js Documentation](https://prismic.io/docs/reactjs/getting-started/prismic-gatsby)
 
 ## License
 
