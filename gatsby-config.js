@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-prismic-graphql`,
+      resolve: `@prismicio/gatsby-source-prismic-graphql`,
       options: {
         repositoryName: repo[1], // Loads the repo name from prismic configuration
         path: '/preview',
