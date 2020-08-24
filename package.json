@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Levi Gable",
   "dependencies": {
+    "@prismicio/gatsby-source-prismic-graphql": "^3.6.11",
     "gatsby": "^2.20.12",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
@@ -12,7 +13,6 @@
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.4",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-source-prismic-graphql": "^3.5.0",
     "gatsby-transformer-sharp": "^2.4.4",
     "node-sass": "^4.13.1",
     "prismic-javascript": "^2.7.0",
