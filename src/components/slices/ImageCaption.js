@@ -5,11 +5,11 @@ import { RichText } from 'prismic-reactjs'
 const DefaultImage = ({ slice }) =>
 	<div className="post-image container">
 		<figcaption className="block-img">
-			<img src={ slice.primary.image.url } alt={ slice.primary.image.alt } />
-			{ slice.primary.caption && RichText.asText(slice.primary.caption) !== ""
+			<img src={slice.primary.image.url} alt={slice.primary.image.alt} />
+			{slice.primary.caption && RichText.asText(slice.primary.caption.raw) !== ""
 				? <figcaption className="image-label">
-					{ RichText.asText(slice.primary.caption) }
-					</figcaption>
+					{RichText.asText(slice.primary.caption.raw)}
+				</figcaption>
 				: null
 			}
 		</figcaption>
@@ -19,11 +19,11 @@ const DefaultImage = ({ slice }) =>
 const EmphasizedImage = ({ slice }) =>
 	<div className="post-image container">
 		<figcaption className="block-img emphasized">
-			<img src={ slice.primary.image.url } alt={ slice.primary.image.alt } />
-			{ slice.primary.caption && RichText.asText(slice.primary.caption) !== ""
+			<img src={slice.primary.image.url} alt={slice.primary.image.alt} />
+			{slice.primary.caption && RichText.asText(slice.primary.caption.raw) !== ""
 				? <figcaption className="image-label">
-					{ RichText.asText(slice.primary.caption) }
-					</figcaption>
+					{RichText.asText(slice.primary.caption.raw)}
+				</figcaption>
 				: null
 			}
 		</figcaption>
@@ -31,31 +31,31 @@ const EmphasizedImage = ({ slice }) =>
 
 // Full Width Image
 const FullWidthImage = ({ slice }) =>
-	<div className="post-image full-width-image" style={{ backgroundImage: 'url('+ slice.primary.image.url +')' }}>
+	<div className="post-image full-width-image" style={{ backgroundImage: 'url(' + slice.primary.image.url + ')' }}>
 		<div className="wrapper">
-			{ slice.primary.caption && RichText.asText(slice.primary.caption) !== ""
-				? <span className="image-label">{ RichText.asText(slice.primary.caption) }</span>
+			{slice.primary.caption && RichText.asText(slice.primary.caption.raw) !== ""
+				? <span className="image-label">{RichText.asText(slice.primary.caption.raw)}</span>
 				: null
 			}
 		</div>
 	</div>
 
 // Function to determine the image type
-const renderSwitch = function(slice) {
-	switch(slice.label) {
+const renderSwitch = function (slice) {
+	switch (slice.slice_label) {
 		case "image-full-width":
-			return <FullWidthImage slice={ slice } />
+			return <FullWidthImage slice={slice} />
 		case "emphasized":
-			return <EmphasizedImage slice={ slice } />
+			return <EmphasizedImage slice={slice} />
 		default:
-			return <DefaultImage slice={ slice } />
+			return <DefaultImage slice={slice} />
 	}
 }
 
 export default ({ slice }) => {
-  return (
+	return (
 		<Fragment>
-			{ renderSwitch(slice) }
+			{ renderSwitch(slice)}
 		</Fragment>
 	);
 }

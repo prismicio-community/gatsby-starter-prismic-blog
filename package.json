@@ -5,25 +5,34 @@
   "version": "0.1.0",
   "author": "Levi Gable",
   "dependencies": {
-    "@prismicio/gatsby-source-prismic-graphql": "^3.6.11",
-    "gatsby": "^2.20.12",
-    "gatsby-plugin-manifest": "^2.3.3",
-    "gatsby-plugin-offline": "^3.1.2",
-    "gatsby-plugin-react-helmet": "^3.2.1",
-    "gatsby-plugin-sass": "^2.2.1",
-    "gatsby-plugin-sharp": "^2.5.4",
-    "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-sharp": "^2.4.4",
+    "gatsby": "^2.29.2",
+    "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-offline": "^3.7.1",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sass": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-source-prismic": "^3.3.1",
+    "gatsby-transformer-sharp": "^2.9.0",
     "node-sass": "^4.13.1",
-    "prismic-javascript": "^2.7.0",
-    "prismic-reactjs": "^1.3.0",
+    "prismic-reactjs": "^1.3.3",
+    "prismic-richtext": "^1.0.3",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^2.0.4"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
   },
   "keywords": [
     "gatsby"
@@ -31,10 +40,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "gatsby develop",
+    "develop": "gatsby develop",
+    "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
-    "now-build": "gatsby build"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",

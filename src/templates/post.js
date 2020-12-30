@@ -1,114 +1,117 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import Layout from '../components/layouts' 
+import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
 query BlogPostQuery($uid: String) {
-  prismic{
-    allPosts(uid: $uid){
-      edges{
-        node{
-          _meta{
-            id
-            uid
-            type
+    prismicPost(uid: {eq: $uid}) {
+      id
+      uid
+      lang
+      type
+      url
+      data {
+        date
+        title {
+          raw
+        }
+        body {
+          ... on PrismicPostBodyText {
+            slice_label
+            slice_type
+            primary {
+              text {
+                raw
+              }
+            }
           }
-          title
-          date
-          body{
-            __typename
-            ... on PRISMIC_PostBodyText{
-              type
-              label
-              primary{
-                text
+          ... on PrismicPostBodyQuote {
+            slice_label
+            slice_type
+            primary {
+              quote {
+                raw
               }
             }
-            ... on PRISMIC_PostBodyQuote{
-              type
-              label
-              primary{
-                quote
+          }
+          ... on PrismicPostBodyImageWithCaption {
+            id
+            slice_label
+            slice_type
+            primary {
+              image {
+                alt
+                url
               }
-            }
-            ... on PRISMIC_PostBodyImage_with_caption{
-              type
-              label
-              primary{
-                image
-                caption
+              caption {
+                raw
               }
             }
           }
         }
       }
     }
-  }
-}
+  }  
 `
 
 // Sort and display the different slice options
-const PostSlices = ({ slices }) => {
-  return slices.map((slice, index) => {
-    const res = (() => {
-      switch(slice.type) {
-        case 'text': return (
-          <div key={ index } className="homepage-slice-wrapper">
-            { <Text slice={ slice } /> }
-          </div>
-        )
+const PostSlices = ({ slices }) => slices.map((slice, index) => {
+  const res = (() => {
+    switch (slice.slice_type) {
+      case 'text': return (
+        <div key={index} className="homepage-slice-wrapper">
+          <Text slice={slice} />
+        </div>
+      )
 
-        case 'quote': return (
-          <div key={ index } className="homepage-slice-wrapper">
-            { <Quote slice={ slice } /> }
-          </div>
-        )
+      case 'quote': return (
+        <div key={index} className="homepage-slice-wrapper">
+          <Quote slice={slice} />
+        </div>
+      )
 
-        case 'image_with_caption': return (
-          <div key={ index } className="homepage-slice-wrapper">
-            { <ImageCaption slice={ slice } /> }
-          </div>
-        )
+      case 'image_with_caption': return (
+        <div key={index} className="homepage-slice-wrapper">
+          <ImageCaption slice={slice} />
+        </div>
+      )
 
-        default: return
-      }
-    })();
-    return res;
-  })
-}
+      default:
+    }
+  })()
+  return res
+})
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
-  const titled = blogPost.title.length !== 0 ;
+  const titled = blogPost.title.raw.length !== 0
   return (
     <div>
       <div className="container post-header">
         <div className="back">
           <Link to="/">back to list</Link>
         </div>
-        {/* Render the edit button */}
-        <h1 data-wio-id={ blogPost._meta.id }>
-          { titled ? RichText.asText(blogPost.title) : 'Untitled' }
+        <h1>
+          { titled ? RichText.asText(blogPost.title.raw) : 'Untitled' }
         </h1>
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
-      <PostSlices slices={ blogPost.body } />
+      <PostSlices slices={blogPost.body} />
     </div>
-  );
+  )
 }
 
-export default (props) => {
+export default ({ data }) => {
+  if (!data) return null
   // Define the Post content returned from Prismic
-  const doc = props.data.prismic.allPosts.edges.slice(0,1).pop();
+  const post = data.prismicPost.data
 
-  if(!doc) return null;
-
-  return(
+  return (
     <Layout>
-      <PostBody blogPost={ doc.node } />
+      <PostBody blogPost={post} />
     </Layout>
   )
 }
