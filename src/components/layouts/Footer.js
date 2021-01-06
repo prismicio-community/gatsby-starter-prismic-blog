@@ -6,10 +6,16 @@ export default () => (
     <p>
       Proudly published with
       {' '}
-      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">Prismic</a>
+      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
+        Prismic
+      </a>
       <br />
       <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
-        <img className="footer-logo" src={prismicLogo} alt="Gray Prismic logo" />
+        <img
+          className="footer-logo"
+          src={prismicLogo}
+          alt="Gray Prismic logo"
+        />
       </a>
     </p>
   </footer>

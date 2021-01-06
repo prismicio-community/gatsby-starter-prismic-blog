@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
+import { withPreview } from 'gatsby-source-prismic'
 import Layout from '../components/layouts'
 import { ImageCaption, Quote, Text } from '../components/slices'
 
@@ -104,7 +105,7 @@ const PostBody = ({ blogPost }) => {
   )
 }
 
-export default ({ data }) => {
+export const Post = ({ data }) => {
   if (!data) return null
   // Define the Post content returned from Prismic
   const post = data.prismicPost.data
@@ -115,3 +116,5 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default withPreview(Post)
