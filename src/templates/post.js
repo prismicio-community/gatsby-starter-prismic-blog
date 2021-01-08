@@ -7,8 +7,8 @@ import { ImageCaption, Quote, Text } from '../components/slices'
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
-query BlogPostQuery($uid: String) {
-    prismicPost(uid: {eq: $uid}) {
+  query BlogPostQuery($uid: String) {
+    prismicPost(uid: { eq: $uid }) {
       id
       uid
       lang
@@ -55,40 +55,43 @@ query BlogPostQuery($uid: String) {
         }
       }
     }
-  }  
+  }
 `
 
 // Sort and display the different slice options
-const PostSlices = ({ slices }) => slices.map((slice, index) => {
-  const res = (() => {
-    switch (slice.slice_type) {
-      case 'text': return (
-        <div key={index} className="homepage-slice-wrapper">
-          <Text slice={slice} />
-        </div>
-      )
+const PostSlices = ({ slices }) =>
+  slices.map((slice, index) => {
+    const res = (() => {
+      switch (slice.slice_type) {
+        case 'text':
+          return (
+            <div key={index} className="homepage-slice-wrapper">
+              <Text slice={slice} />
+            </div>
+          )
 
-      case 'quote': return (
-        <div key={index} className="homepage-slice-wrapper">
-          <Quote slice={slice} />
-        </div>
-      )
+        case 'quote':
+          return (
+            <div key={index} className="homepage-slice-wrapper">
+              <Quote slice={slice} />
+            </div>
+          )
 
-      case 'image_with_caption': return (
-        <div key={index} className="homepage-slice-wrapper">
-          <ImageCaption slice={slice} />
-        </div>
-      )
+        case 'image_with_caption':
+          return (
+            <div key={index} className="homepage-slice-wrapper">
+              <ImageCaption slice={slice} />
+            </div>
+          )
 
-      default:
-    }
-  })()
-  return res
-})
+        default:
+      }
+    })()
+    return res
+  })
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
-  const titled = blogPost.title.raw.length !== 0
   return (
     <div>
       <div className="container post-header">
@@ -96,7 +99,9 @@ const PostBody = ({ blogPost }) => {
           <Link to="/">back to list</Link>
         </div>
         <h1>
-          { titled ? RichText.asText(blogPost.title.raw) : 'Untitled' }
+          {RichText.asText(blogPost.title.raw).length !== 0
+            ? RichText.asText(blogPost.title.raw)
+            : 'Untitled'}
         </h1>
       </div>
       {/* Go through the slices of the post and render the appropiate one */}

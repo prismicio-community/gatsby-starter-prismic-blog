@@ -23,8 +23,7 @@ export default (props) => (
 
 const Layout = ({ data, children }) => {
   // Define the meta title and description
-  const { title } = data.site.siteMetadata
-  const { description } = data.site.siteMetadata
+  const { title, description } = data.site.siteMetadata
 
   return (
     <>
