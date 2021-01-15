@@ -4,7 +4,7 @@
 
 ## Check out our article for a step by step guide to getting this project up and running
 
-> [Prismic project guide](https://intercom.help/prismicio/examples/gatsby-js-samples/sample-blog-with-api-based-cms-gatsbyjs)
+> [Prismic project guide](https://prismic.io/docs/technologies/sample-blog-with-prismic-and-gatsby)
 
 ## Launch this project in your local environment
 
