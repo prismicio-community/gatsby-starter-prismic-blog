@@ -1,9 +1,7 @@
 {
-  "name": "gatsby-blog",
-  "private": true,
-  "description": "A sample blog website built using Gatsby connected to Prismic CMS",
-  "version": "0.1.0",
-  "author": "Levi Gable",
+  "name": "gatsbyjs-blog",
+  "description": "Sample blog built with Gatsby.js using Prismic headless CMS",
+  "author": "Prismic",
   "dependencies": {
     "gatsby": "^2.29.2",
     "gatsby-plugin-manifest": "^2.9.1",

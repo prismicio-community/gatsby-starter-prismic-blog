@@ -1,39 +1,17 @@
-# Prismic Gatsby Example Blog
-
+# Prismic & Gatsby.js Example Blog
 > [Gatsby](https://www.gatsbyjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
-## Check out our article for a step by step guide to getting this project up and running
-
-> [Prismic project guide](https://prismic.io/docs/technologies/sample-blog-with-prismic-and-gatsby)
-
-## Launch this project in your local environment
-
-Run the following commands:
-
-``` bash
-npm install
-npm start
-```
-Then you can access it at [http://localhost:8000](http://localhost:8000).
-
-## Launching the project in production
-
-Run the following commands to compile the project and launch the server for production:
-
-``` bash
-npm run build
-npm run serve
-```
-
+## Check out the dedicated article to get this project up and running
+> [Prismic project guide](https://prismic.io/docs/technologies/sample-blog-gatsby)
 ## Learn more about using Prismic with Gatsby.js
 
-> [Prismic Gatsby.js Documentation](https://prismic.io/docs/technologies/gatsby)
+> [Prismic + Gatsby.js Documentation](https://prismic.io/docs/technologies/gatsby)
 
 ## License
 
 This software is licensed under the Apache 2 license, quoted below.
 
-Copyright 2020 Prismic (http://prismic.io).
+Copyright 2021 [Prismic](http://prismic.io/).
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
 
