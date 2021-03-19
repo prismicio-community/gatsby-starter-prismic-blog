@@ -28,7 +28,7 @@ const firstParagraph = (post) => {
 // A summary of the Blog Post
 const PostSummary = ({ post, id }) => {
   // Store and format the blog post's publication date
-  let postDate = Date(post.date)
+  let postDate = Date(post.node.data.date)
   postDate = postDate
     ? new Intl.DateTimeFormat('en-US', {
       month: 'short',
