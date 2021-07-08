@@ -3,45 +3,37 @@
   "description": "Sample blog built with Gatsby.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "gatsby": "^3.0.0",
+    "gatsby": "^3.5.0",
+    "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-offline": "^4.0.0",
+    "gatsby-plugin-prismic-previews": "^4.0.0-beta.18",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sass": "^4.0.2",
-    "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-source-prismic": "^3.3.4",
-    "gatsby-transformer-sharp": "^3.0.0",
+    "gatsby-source-prismic": "^4.0.0-beta.17",
     "node-sass": "^5.0.0",
     "prismic-reactjs": "^1.3.3",
-    "prismic-richtext": "^1.0.3",
-    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
+    "dotenv": "^8.6.0",
+    "eslint": "^7.26.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,scss,md}\"",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "start:prod": "npm run clean && npm run build && npm run serve"
   },
   "repository": {
     "type": "git",

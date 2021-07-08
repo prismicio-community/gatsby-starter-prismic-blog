@@ -1,9 +1,9 @@
-import React from 'react'
-import { withUnpublishedPreview } from 'gatsby-source-prismic'
-import { Post } from '../templates/post'
-import { Homepage } from './index'
+import * as React from 'react'
+import { withPrismicUnpublishedPreview } from 'gatsby-plugin-prismic-previews'
 
-const Page404 = () => (
+import { unpublishedRepositoryConfigs } from '../utils/prismicUnpublishedPreviews'
+
+const NotFoundPage = () => (
   <div className="not-found">
     <h1>404</h1>
     <h3>The page you are looking for was not found</h3>
@@ -15,11 +15,7 @@ const Page404 = () => (
   </div>
 )
 
-export default withUnpublishedPreview(Page404, {
-  templateMap: {
-    post: Post,
-    homepage: Homepage,
-    prismicPost: Post,
-    prismicHomepage: Homepage,
-  },
-})
+export default withPrismicUnpublishedPreview(
+  NotFoundPage,
+  unpublishedRepositoryConfigs,
+)

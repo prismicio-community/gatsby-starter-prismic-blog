@@ -1,27 +1,27 @@
-import React from 'react'
+import * as React from 'react'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import { withPreview } from 'gatsby-source-prismic'
-import Layout from '../components/layouts'
-import BlogPosts from '../components/BlogPosts'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
-// Query for the Blog Home content in Prismic
+import { repositoryConfigs } from '../utils/prismicPreviews'
+
+import { Layout } from '../components/Layout'
+import { BlogPosts } from '../components/BlogPosts'
+
 export const query = graphql`
   query MyQuery {
     prismicBloghome {
       data {
         description {
-          text
+          raw
         }
         headline {
-          text
+          raw
         }
         image {
           url
         }
       }
-      id
-      type
     }
     allPrismicPost(sort: { fields: data___date, order: DESC }) {
       edges {
@@ -36,7 +36,7 @@ export const query = graphql`
             }
             date
             body {
-              ... on PrismicPostBodyText {
+              ... on PrismicPostDataBodyText {
                 id
                 slice_label
                 slice_type
@@ -54,30 +54,22 @@ export const query = graphql`
   }
 `
 
-// Using the queried Blog Home document data, we render the top section
-const BlogHomeHead = ({ home }) => {
-  const avatar = { backgroundImage: `url(${home.image.url})` }
-  return (
-    <div className="home-header container" data-wio-id={home.id}>
-      <div className="blog-avatar" style={avatar} />
-      <h1>{RichText.asText(home.headline)}</h1>
-      <p className="blog-description">{RichText.asText(home.description)}</p>
-    </div>
-  )
-}
-
-export const Homepage = ({ data }) => {
+const Homepage = ({ data }) => {
   if (!data) return null
-  // Define the Blog Home & Blog Post content returned from Prismic
   const home = data.prismicBloghome.data
   const posts = data.allPrismicPost.edges
 
+  const avatar = {backgroundImage: `url(${home.image.url})`}
   return (
     <Layout>
-      <BlogHomeHead home={home} />
+      <div className="home-header container" data-wio-id={home.id}>
+        <div className="blog-avatar" style={avatar} />
+        <h1>{RichText.asText(home.headline.raw)}</h1>
+        <p className="blog-description">{RichText.asText(home.description.raw)}</p>
+      </div>
       <BlogPosts posts={posts} />
     </Layout>
   )
 }
 
-export default withPreview(Homepage)
+export default withPrismicPreview(Homepage, repositoryConfigs)

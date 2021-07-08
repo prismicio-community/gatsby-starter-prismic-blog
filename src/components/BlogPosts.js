@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import { RichText, Date } from 'prismic-reactjs'
 
@@ -59,7 +59,7 @@ const PostSummary = ({ post, id }) => {
   )
 }
 
-export default ({ posts }) => {
+export const BlogPosts = ({ posts }) => {
   if (!posts) return null
   return (
     <div className="blog-posts container">

@@ -1,7 +1,8 @@
-import React from 'react'
-import prismicLogo from '../../images/logo-prismic.svg'
+import * as React from 'react'
 
-export default () => (
+import prismicLogo from '../images/logo-prismic.svg'
+
+export const Footer = () => (
   <footer className="container">
     <p>
       Proudly published with
