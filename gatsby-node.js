@@ -23,4 +23,19 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create listing pages
+  const posts = queryData.data.allPrismicPost.nodes
+  const numPages = Math.ceil(posts.length / 3)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/1` : `/${i + 1}`,
+      component: path.resolve(__dirname, 'src/pages/index.js'),
+      context: {
+        limit: 3,
+        skip: i * 3,
+        numPages,
+      },
+    })
+  })
 }
