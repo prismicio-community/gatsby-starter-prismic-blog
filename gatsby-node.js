@@ -24,17 +24,27 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create listing pages
   const posts = queryData.data.allPrismicPost.nodes
-  const numPages = Math.ceil(posts.length / 3)
+  const numPages = Math.ceil(posts.length / 2)
+
+  // Create homepage
+  createPage({
+    path: '/',
+    component: path.resolve(__dirname, 'src/templates/posts.js'),
+    context: {
+      limit: 2,
+      skip: 0,
+    },
+  })
+
+  // Create listing pages
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/1` : `/${i + 1}`,
-      component: path.resolve(__dirname, 'src/pages/index.js'),
+      component: path.resolve(__dirname, 'src/templates/posts.js'),
       context: {
-        limit: 3,
-        skip: i * 3,
-        numPages,
+        limit: 2,
+        skip: i * 2,
       },
     })
   })
