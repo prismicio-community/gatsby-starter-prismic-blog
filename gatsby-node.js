@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   const posts = queryData.data.allPrismicPost.nodes
-  const numPages = Math.ceil(posts.length / 2)
+  const numPages = Math.ceil(posts.length / 3)
 
   // Create homepage
   createPage({
