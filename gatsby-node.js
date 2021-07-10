@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
     path: '/',
     component: path.resolve(__dirname, 'src/templates/posts.js'),
     context: {
-      limit: 2,
+      limit: 3,
       skip: 0,
     },
   })
@@ -40,11 +40,11 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create listing pages
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/1` : `/${i + 1}`,
+      path: `/${i + 1}`,
       component: path.resolve(__dirname, 'src/templates/posts.js'),
       context: {
-        limit: 2,
-        skip: i * 2,
+        limit: 3,
+        skip: i * 3,
       },
     })
   })
