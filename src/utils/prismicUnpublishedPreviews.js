@@ -11,7 +11,7 @@ import { prismicRepo } from '../../prismic-configuration'
 import { linkResolver } from './linkResolver'
 
 import Post from '../templates/post'
-import Homepage from '../pages/index'
+import Posts from '../templates/posts'
 /**
  * Prismic preview configuration for each repository in your app. This set of
  * configuration objects will be used with the `withPrismicUnpublishedPreview`
@@ -28,7 +28,7 @@ export const unpublishedRepositoryConfigs = [
     linkResolver,
     componentResolver: componentResolverFromMap({
       post: Post,
-      bloghome: Homepage,
+      bloghome: Posts,
     }),
   },
 ]
