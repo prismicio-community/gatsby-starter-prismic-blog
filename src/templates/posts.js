@@ -11,6 +11,7 @@ import { BlogPosts } from '../components/BlogPosts'
 export const query = graphql`
   query MyQuery($limit: Int!, $skip: Int!) {
     prismicBloghome {
+      _previewable
       data {
         description {
           raw
@@ -29,6 +30,7 @@ export const query = graphql`
       skip: $skip
     ) {
       nodes {
+        _previewable
         id
         url
         data {
