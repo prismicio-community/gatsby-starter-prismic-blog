@@ -11,6 +11,7 @@ import { SliceZone } from '../components/SliceZone'
 export const query = graphql`
   query BlogPostQuery($uid: String) {
     prismicPost(uid: { eq: $uid }) {
+      _previewable
       id
       uid
       lang
