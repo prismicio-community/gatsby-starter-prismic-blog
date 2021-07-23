@@ -11,7 +11,6 @@ module.exports = {
     description: 'Blog example for Gatsby & Prismic',
   },
   plugins: [
-    'gatsby-plugin-gatsby-cloud',
     {
       resolve: 'gatsby-source-prismic',
       options: {
