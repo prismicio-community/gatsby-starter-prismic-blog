@@ -3,7 +3,7 @@ const path = require('path')
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const queryData = await graphql(`
+  const postPages = await graphql(`
     {
       allPrismicPost {
         nodes {
