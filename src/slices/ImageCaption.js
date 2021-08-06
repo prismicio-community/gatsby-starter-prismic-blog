@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import * as React from 'react'
+import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 
 // Default Image
@@ -60,4 +61,18 @@ const renderSwitch = (slice) => {
   }
 }
 
-export default ({ slice }) => <>{renderSwitch(slice)}</>
+export const ImageCaption = ({ slice }) => <>{renderSwitch(slice)}</>
+
+export const query = graphql`
+  fragment PostDataBodyImageWithCaption on PrismicPostDataBodyImageWithCaption {
+    primary {
+      image {
+        alt
+        url
+      }
+      caption {
+        raw
+      }
+    }
+  }
+`

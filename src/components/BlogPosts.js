@@ -1,6 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import { RichText, Date } from 'prismic-reactjs'
+
+import { Pagination } from '../utils/pagination'
 
 // Function to retrieve a small preview of the post's text
 const firstParagraph = (post) => {
@@ -44,9 +46,9 @@ const PostSummary = ({ post, id }) => {
       <h2>
         {/* We render a link to a particular post
          * using the linkResolver for the url and its title */}
-        <Link to={post.node.url}>
-          {RichText.asText(post.node.data.title.raw).length !== 0
-            ? RichText.asText(post.node.data.title.raw)
+        <Link to={post.url}>
+          {RichText.asText(post.data.title.raw).length !== 0
+            ? RichText.asText(post.data.title.raw)
             : defaultTitle}
         </Link>
       </h2>
@@ -54,18 +56,22 @@ const PostSummary = ({ post, id }) => {
         <time>{postDate}</time>
       </p>
       {/* Renders a small preview of the post's text */}
-      {firstParagraph(post.node.data)}
+      {firstParagraph(post.data)}
     </div>
   )
 }
 
-export default ({ posts }) => {
-  if (!posts) return null
+export const BlogPosts = ({ docs }) => {
+  if (!docs) return null
+
+  const posts = docs.nodes
+
   return (
     <div className="blog-posts container">
       {posts.map((post) => (
-        <PostSummary post={post} key={post.node.id} />
+        <PostSummary post={post} key={post.id} />
       ))}
+      <Pagination pageInfo={docs.pageInfo} />
     </div>
   )
 }
