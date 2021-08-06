@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const posts = queryData.data.allPrismicPost.nodes
+  const posts = postPages.data.allPrismicPost.nodes
   // The numPages constant will return the closest number between 
   // 3 and the total amount of posts
   const numPages = Math.ceil(posts.length / 3)
