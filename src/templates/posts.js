@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
