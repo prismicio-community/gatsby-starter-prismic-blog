@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  queryData.data.allPrismicPost.nodes.forEach((page) => {
+  postPages.data.allPrismicPost.nodes.forEach((page) => {
     createPage({
       path: page.url,
       component: path.resolve(__dirname, 'src/templates/post.js'),
@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const posts = queryData.data.allPrismicPost.nodes
+  const posts = postPages.data.allPrismicPost.nodes
   // The numPages constant will return the closest number between 
   // 3 and the total amount of posts
   const numPages = Math.ceil(posts.length / 3)

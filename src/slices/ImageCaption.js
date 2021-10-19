@@ -8,9 +8,9 @@ const DefaultImage = ({ slice }) => (
     <figcaption className="block-img">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
         <figcaption className="image-label">
-          {RichText.asText(slice.primary.caption.raw)}
+          {RichText.asText(slice.primary.caption.richText)}
         </figcaption>
         ) : null}
     </figcaption>
@@ -23,9 +23,9 @@ const EmphasizedImage = ({ slice }) => (
     <figcaption className="block-img emphasized">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
         <figcaption className="image-label">
-          {RichText.asText(slice.primary.caption.raw)}
+          {RichText.asText(slice.primary.caption.richText)}
         </figcaption>
         ) : null}
     </figcaption>
@@ -40,9 +40,9 @@ const FullWidthImage = ({ slice }) => (
   >
     <div className="wrapper">
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.richText) !== '' ? (
         <span className="image-label">
-          {RichText.asText(slice.primary.caption.raw)}
+          {RichText.asText(slice.primary.caption.richText)}
         </span>
         ) : null}
     </div>
@@ -71,7 +71,7 @@ export const query = graphql`
         url
       }
       caption {
-        raw
+        richText
       }
     }
   }

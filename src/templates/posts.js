@@ -3,8 +3,6 @@ import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
-import { repositoryConfigs } from '../utils/prismicPreviews'
-
 import { Layout } from '../components/Layout'
 import { BlogPosts } from '../components/BlogPosts'
 
@@ -14,10 +12,10 @@ export const query = graphql`
       _previewable
       data {
         description {
-          raw
+          richText
         }
         headline {
-          raw
+          richText
         }
         image {
           url
@@ -35,7 +33,7 @@ export const query = graphql`
         url
         data {
           title {
-            raw
+            richText
           }
           date
           body {
@@ -45,7 +43,7 @@ export const query = graphql`
               slice_type
               primary {
                 text {
-                  raw
+                  richText
                 }
               }
             }
@@ -71,9 +69,9 @@ const Homepage = ({ data }) => {
     <Layout>
       <div className="home-header container" data-wio-id={home.id}>
         <div className="blog-avatar" style={avatar} />
-        <h1>{RichText.asText(home.headline.raw)}</h1>
+        <h1>{RichText.asText(home.headline.richText)}</h1>
         <p className="blog-description">
-          {RichText.asText(home.description.raw)}
+          {RichText.asText(home.description.richText)}
         </p>
       </div>
       <BlogPosts docs={docs} />
@@ -81,4 +79,4 @@ const Homepage = ({ data }) => {
   )
 }
 
-export default withPrismicPreview(Homepage, repositoryConfigs)
+export default withPrismicPreview(Homepage)

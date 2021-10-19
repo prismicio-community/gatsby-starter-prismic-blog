@@ -7,7 +7,7 @@ export const Text = ({ slice }) => (
   <div className="post-text container">
     <div>
       <RichText
-        render={slice.primary.text.raw || []}
+        render={slice.primary.text.richText || []}
         serializeHyperlink={CustomLink}
       />
     </div>
@@ -18,7 +18,7 @@ export const query = graphql`
   fragment PostDataBodyText on PrismicPostDataBodyText {
     primary {
       text {
-        raw
+        richText
       }
     }
   }
