@@ -18,12 +18,12 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "dotenv": "^8.6.0",
-    "eslint": "^7.26.0",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.31.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.2"
   },
   "license": "Apache-2.0",
   "scripts": {
