@@ -7,8 +7,8 @@ import { Layout } from '../components/Layout'
 import { SliceZone } from '../components/SliceZone'
 
 export const query = graphql`
-  query BlogPostQuery($uid: String) {
-    prismicPost(uid: { eq: $uid }) {
+  query BlogPostQuery($id: String) {
+    prismicPost(id: { eq: $id }) {
       _previewable
       id
       uid
