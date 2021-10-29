@@ -11,7 +11,7 @@ const firstParagraph = (post) => {
   if (firstTextSlice != null) {
     // Set the character limit for the text we'll show in the homepage
     const textLimit = 300
-    const text = RichText.asText(firstTextSlice.primary.text.raw)
+    const text = RichText.asText(firstTextSlice.primary.text.richText)
     const limitedText = text.substring(0, textLimit)
 
     if (text.length > textLimit) {
@@ -33,10 +33,10 @@ const PostSummary = ({ post, id }) => {
   let postDate = Date(post.date)
   postDate = postDate
     ? new Intl.DateTimeFormat('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    }).format(postDate)
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric',
+      }).format(postDate)
     : ''
 
   // // Default title when post has no title set
@@ -47,8 +47,8 @@ const PostSummary = ({ post, id }) => {
         {/* We render a link to a particular post
          * using the linkResolver for the url and its title */}
         <Link to={post.url}>
-          {RichText.asText(post.data.title.raw).length !== 0
-            ? RichText.asText(post.data.title.raw)
+          {RichText.asText(post.data.title.richText).length !== 0
+            ? RichText.asText(post.data.title.richText)
             : defaultTitle}
         </Link>
       </h2>

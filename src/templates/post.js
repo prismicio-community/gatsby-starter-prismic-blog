@@ -3,8 +3,6 @@ import { graphql, Link } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
-import { repositoryConfigs } from '../utils/prismicPreviews'
-
 import { Layout } from '../components/Layout'
 import { SliceZone } from '../components/SliceZone'
 
@@ -20,7 +18,7 @@ export const query = graphql`
       data {
         date
         title {
-          raw
+          richText
         }
         body {
           ... on PrismicSliceType {
@@ -49,8 +47,8 @@ const Post = ({ data }) => {
           <Link to="/">back to list</Link>
         </div>
         <h1>
-          {RichText.asText(post.title.raw).length !== 0
-            ? RichText.asText(post.title.raw)
+          {RichText.asText(post.title.richText).length !== 0
+            ? RichText.asText(post.title.richText)
             : 'Untitled'}
         </h1>
       </div>
@@ -58,4 +56,4 @@ const Post = ({ data }) => {
     </Layout>
   )
 }
-export default withPrismicPreview(Post, repositoryConfigs)
+export default withPrismicPreview(Post)

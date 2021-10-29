@@ -25,7 +25,7 @@ export const Pagination = ({ pageInfo }) => {
   return (
     <div className="pagination">
       <Link className={prevClass} to={prevPagePath} rel="prev">
-        {"<"}
+        {'<'}
       </Link>
       {/*  Render numeric pagination  */}
       {Array.from({ length: pageCount }, (_, i) => {
@@ -40,7 +40,7 @@ export const Pagination = ({ pageInfo }) => {
         )
       })}
       <Link className={nextClass} to={nextPagePath} rel="next">
-      {">"}
+        {'>'}
       </Link>
     </div>
   )

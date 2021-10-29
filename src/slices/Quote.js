@@ -4,7 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 export const Quote = ({ slice }) => (
   <div className="post-quote container">
-    <blockquote>{RichText.asText(slice.primary.quote.raw)}</blockquote>
+    <blockquote>{RichText.asText(slice.primary.quote.richText)}</blockquote>
   </div>
 )
 
@@ -12,7 +12,7 @@ export const query = graphql`
   fragment PostDataBodyQuote on PrismicPostDataBodyQuote {
     primary {
       quote {
-        raw
+        richText
       }
     }
   }

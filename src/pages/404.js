@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { withPrismicUnpublishedPreview } from 'gatsby-plugin-prismic-previews'
 
-import { unpublishedRepositoryConfigs } from '../utils/prismicUnpublishedPreviews'
-
 const NotFoundPage = () => (
   <div className="not-found">
     <h1>404</h1>
@@ -15,7 +13,4 @@ const NotFoundPage = () => (
   </div>
 )
 
-export default withPrismicUnpublishedPreview(
-  NotFoundPage,
-  unpublishedRepositoryConfigs,
-)
+export default withPrismicUnpublishedPreview(NotFoundPage)
