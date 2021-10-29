@@ -1,8 +1,11 @@
 # Prismic & Gatsby.js Example Blog
+
 > [Gatsby](https://www.gatsbyjs.org/) example blog project with content managed in [Prismic](https://prismic.io)
 
 ## Check out the dedicated article to get this project up and running
+
 > [Prismic project guide](https://prismic.io/docs/technologies/sample-blog-gatsby)
+
 ## Learn more about using Prismic with Gatsby.js
 
 > [Prismic + Gatsby.js Documentation](https://prismic.io/docs/technologies/gatsby)

@@ -33,10 +33,10 @@ const PostSummary = ({ post, id }) => {
   let postDate = Date(post.date)
   postDate = postDate
     ? new Intl.DateTimeFormat('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-    }).format(postDate)
+        month: 'short',
+        day: '2-digit',
+        year: 'numeric',
+      }).format(postDate)
     : ''
 
   // // Default title when post has no title set

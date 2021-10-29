@@ -4,9 +4,7 @@ import { repositoryConfigs } from './src/utils/prismicPreviews'
 import './src/stylesheets/main.scss'
 
 export const wrapRootElement = ({ element }) => (
-  <PrismicPreviewProvider
-    repositoryConfigs={repositoryConfigs}
-  >
+  <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
     {element}
   </PrismicPreviewProvider>
 )
