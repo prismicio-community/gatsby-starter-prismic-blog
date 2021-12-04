@@ -2,4 +2,8 @@ import { ImageCaption } from './ImageCaption'
 import { Quote } from './Quote'
 import { Text } from './Text'
 
-export { ImageCaption, Quote, Text }
+export const components = {
+  image_with_caption: ImageCaption,
+  quote: Quote,
+  text: Text,
+}

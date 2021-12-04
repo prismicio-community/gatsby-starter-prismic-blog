@@ -1,18 +1,16 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
 
 // Default Image
 const DefaultImage = ({ slice }) => (
   <div className="post-image container">
     <figcaption className="block-img">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
-      {slice.primary.caption &&
-      RichText.asText(slice.primary.caption.richText) !== '' ? (
+      {slice.primary.caption.text && (
         <figcaption className="image-label">
-          {RichText.asText(slice.primary.caption.richText)}
+          {slice.primary.caption.text}
         </figcaption>
-      ) : null}
+      )}
     </figcaption>
   </div>
 )
@@ -22,12 +20,11 @@ const EmphasizedImage = ({ slice }) => (
   <div className="post-image container">
     <figcaption className="block-img emphasized">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
-      {slice.primary.caption &&
-      RichText.asText(slice.primary.caption.richText) !== '' ? (
+      {slice.primary.caption.text && (
         <figcaption className="image-label">
-          {RichText.asText(slice.primary.caption.richText)}
+          {slice.primary.caption.text}
         </figcaption>
-      ) : null}
+      )}
     </figcaption>
   </div>
 )
@@ -39,12 +36,9 @@ const FullWidthImage = ({ slice }) => (
     style={{ backgroundImage: `url(${slice.primary.image.url})` }}
   >
     <div className="wrapper">
-      {slice.primary.caption &&
-      RichText.asText(slice.primary.caption.richText) !== '' ? (
-        <span className="image-label">
-          {RichText.asText(slice.primary.caption.richText)}
-        </span>
-      ) : null}
+      {slice.primary.caption.text && (
+        <span className="image-label">{slice.primary.caption.text}</span>
+      )}
     </div>
   </div>
 )
@@ -71,7 +65,7 @@ export const query = graphql`
         url
       }
       caption {
-        richText
+        text
       }
     }
   }

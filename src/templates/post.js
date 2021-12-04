@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { SliceZone } from '@prismicio/react'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
+import { components } from '../slices'
 import { Layout } from '../components/Layout'
-import { SliceZone } from '../components/SliceZone'
 
 export const query = graphql`
   query BlogPostQuery($id: String) {
@@ -18,7 +18,7 @@ export const query = graphql`
       data {
         date
         title {
-          richText
+          text
         }
         body {
           ... on PrismicSliceType {
@@ -39,6 +39,7 @@ const Post = ({ data }) => {
   if (!data) return null
 
   const post = data.prismicPost.data
+  const title = post.title.text || 'Untitled'
 
   return (
     <Layout>
@@ -46,13 +47,9 @@ const Post = ({ data }) => {
         <div className="back">
           <Link to="/">back to list</Link>
         </div>
-        <h1>
-          {RichText.asText(post.title.richText).length !== 0
-            ? RichText.asText(post.title.richText)
-            : 'Untitled'}
-        </h1>
+        <h1>{title}</h1>
       </div>
-      <SliceZone slices={post.body} />
+      <SliceZone slices={post.body} components={components} />
     </Layout>
   )
 }
