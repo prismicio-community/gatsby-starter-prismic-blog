@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { RichText, Date } from 'prismic-reactjs'
+import * as prismicH from '@prismicio/helpers'
 
 import { Pagination } from '../utils/pagination'
 
@@ -11,7 +11,7 @@ const firstParagraph = (post) => {
   if (firstTextSlice != null) {
     // Set the character limit for the text we'll show in the homepage
     const textLimit = 300
-    const text = RichText.asText(firstTextSlice.primary.text.richText)
+    const text = prismicH.asText(firstTextSlice.primary.text.richText)
     const limitedText = text.substring(0, textLimit)
 
     if (text.length > textLimit) {
@@ -29,31 +29,15 @@ const firstParagraph = (post) => {
 
 // A summary of the Blog Post
 const PostSummary = ({ post, id }) => {
-  // Store and format the blog post's publication date
-  let postDate = Date(post.date)
-  postDate = postDate
-    ? new Intl.DateTimeFormat('en-US', {
-        month: 'short',
-        day: '2-digit',
-        year: 'numeric',
-      }).format(postDate)
-    : ''
-
-  // // Default title when post has no title set
-  const defaultTitle = 'Untitled'
   return (
     <div className="post-summary" key={id}>
       <h2>
         {/* We render a link to a particular post
          * using the linkResolver for the url and its title */}
-        <Link to={post.url}>
-          {RichText.asText(post.data.title.richText).length !== 0
-            ? RichText.asText(post.data.title.richText)
-            : defaultTitle}
-        </Link>
+        <Link to={post.url}>{post.data.title.text || 'Untitled'}</Link>
       </h2>
       <p className="blog-post-meta">
-        <time>{postDate}</time>
+        <time>{post.data.date}</time>
       </p>
       {/* Renders a small preview of the post's text */}
       {firstParagraph(post.data)}
