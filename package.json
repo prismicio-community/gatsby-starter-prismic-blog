@@ -3,8 +3,8 @@
   "description": "Sample blog built with Gatsby.js using Prismic headless CMS",
   "author": "Prismic",
   "dependencies": {
-    "@prismicio/helpers": "^2.0.0-beta.6",
-    "@prismicio/react": "^2.0.0",
+    "@prismicio/helpers": "^2.0.0",
+    "@prismicio/react": "^2.0.3",
     "gatsby": "^4.3.0",
     "gatsby-plugin-image": "^2.3.0",
     "gatsby-plugin-manifest": "^4.3.0",
