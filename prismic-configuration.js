@@ -7,5 +7,5 @@ module.exports = {
   // your repository.
   //
   // Example: 'my-repo' if your Prismic repository URL is 'my-repo.prismic.io'.
-  prismicRepo: 'your-repo-name',
+  prismicRepo: 'gatsby-blog-pau',
 }
