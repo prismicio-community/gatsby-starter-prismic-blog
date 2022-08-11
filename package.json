@@ -1,44 +1,24 @@
 {
-  "name": "gatsbyjs-blog",
-  "description": "Sample blog built with Gatsby.js using Prismic headless CMS",
-  "author": "Prismic",
-  "dependencies": {
-    "@prismicio/helpers": "^2.0.0-beta.6",
-    "@prismicio/react": "^2.0.0",
-    "gatsby": "^4.3.0",
-    "gatsby-plugin-image": "^2.3.0",
-    "gatsby-plugin-manifest": "^4.3.0",
-    "gatsby-plugin-prismic-previews": "^5.2.1",
-    "gatsby-plugin-react-helmet": "^5.3.0",
-    "gatsby-plugin-sass": "^5.3.0",
-    "gatsby-plugin-sharp": "^4.3.0",
-    "gatsby-source-filesystem": "^4.3.0",
-    "gatsby-source-prismic": "^5.2.3",
-    "node-sass": "^6.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
-  },
-  "devDependencies": {
-    "dotenv": "^10.0.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.0"
-  },
-  "license": "Apache-2.0",
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "blog",
+  "author": "Angelo Ashmore",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "format": "prettier --write \"**/*.{js,jsx,json,scss,md}\"",
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "npm run clean && npm run develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "start:prod": "npm run clean && npm run build && npm run serve"
+    "clean": "gatsby clean"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prismicio/gatsby-blog"
+  "dependencies": {
+    "gatsby": "^4.20.0",
+    "gatsby-plugin-postcss": "^5.20.0",
+    "postcss": "^8.4.16",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   }
 }
