@@ -15,6 +15,17 @@ const sharedSliceModels = fs
     require(path.resolve("src", "slices", entry.name, "model.json"))
   );
 
+const routes = [
+  {
+    type: "article",
+    path: "/articles/:uid",
+  },
+  {
+    type: "page",
+    path: "/:uid",
+  },
+];
+
 module.exports = {
   siteMetadata: {
     title: `Blog`,
@@ -30,22 +41,14 @@ module.exports = {
         repositoryName: "nextjs-starter-prismic-blog",
         customTypeModels,
         sharedSliceModels,
-        routes: [
-          {
-            type: "article",
-            path: "/articles/:uid",
-          },
-          {
-            type: "page",
-            path: "/:uid",
-          },
-        ],
+        routes,
       },
     },
     {
       resolve: "gatsby-plugin-prismic-previews",
       options: {
         repositoryName: "nextjs-starter-prismic-blog",
+        routes,
       },
     },
   ],
