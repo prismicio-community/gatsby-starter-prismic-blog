@@ -15,10 +15,25 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@prismicio/client": "^6.6.4",
+    "@prismicio/helpers": "^2.3.3",
+    "@prismicio/react": "^2.4.4",
+    "clsx": "^1.2.1",
     "gatsby": "^4.20.0",
+    "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-postcss": "^5.20.0",
+    "gatsby-plugin-prismic-previews": "^5.2.8",
+    "gatsby-source-prismic": "^5.2.9",
     "postcss": "^8.4.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "tailwindcss": "^3.1.8"
   }
 }
