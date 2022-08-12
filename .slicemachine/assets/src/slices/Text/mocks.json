@@ -1,0 +1,19 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "text": [
+        {
+          "type": "paragraph",
+          "text": "Magna et ullamco duis amet excepteur exercitation dolor laboris quis. Enim proident esse Lorem.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "text"
+  }
+]

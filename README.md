@@ -1,54 +1,65 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Prismic + Gatsby Blog Starter
 
-## 🚀 Quick start
+This sample blog is an excellent starting point to explore [Gatsby][gatsby] and [Prismic][prismic]. Get it up and running in minutes. Modify and adapt it to your liking; it's all yours!
 
-1.  **Create a Gatsby site.**
+- **Demo**: [Open live demo][live-demo]
+- **Learn more about Prismic and Gatsby**: [Prismic Gatsby Documentation][prismic-docs]
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+&nbsp;
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+<img src="https://user-images.githubusercontent.com/8601064/163122284-5b80a81e-a4fd-482e-9bd5-99b22f61175f.png" alt="Screenshots of the site seen on deskop and mobile browsers" />
 
-2.  **Start developing.**
+&nbsp;
 
-    Navigate into your new site’s directory and start it up.
+## 🚀 Quick Start
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+To start a new project using this starter, run the following commands in your terminal:
 
-3.  **Open the code and start customizing!**
+```sh
+npx degit prismicio-community/gatsby-starter-prismic-blog your-project-name
+cd your-project-name
+npx @slicemachine/init
+```
 
-    Your site is now running at http://localhost:8000!
+The commands will do the following:
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+1. Start a new Gatsby project using this starter.
+2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
+3. Create a new Prismic content repository with sample content.
 
-4.  **Learn more**
+When you're ready to start your project, run the following command:
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```sh
+npm run dev
+```
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Documentation
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+To learn how to work with your new project, [**see this starter's docs**][starter-docs].
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+To learn more about working with Prismic, [**see the Prismic docs**][prismic-docs].
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## License
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```
+Copyright 2013-2022 Prismic <contact@prismic.io> (https://prismic.io)
 
-## 🚀 Quick start (Gatsby Cloud)
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+    http://www.apache.org/licenses/LICENSE-2.0
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+[prismic]: https://prismic.io/
+[prismic-docs]: https://prismic.io/docs/technologies/gatsby
+[prismic-sign-up]: https://prismic.io/dashboard/signup
+[starter-docs]: ./docs/README.md
+[gatsby]: https://gatsby.org/
+[live-demo]: https://gatsby-starter-prismic-blog.vercel.app/

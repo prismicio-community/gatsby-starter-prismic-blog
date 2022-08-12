@@ -1,18 +1,18 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
+  "name": "gatsby-starter-prismic-blog",
+  "version": "0.0.0",
   "private": true,
-  "description": "blog",
-  "author": "Angelo Ashmore",
-  "keywords": [
-    "gatsby"
-  ],
+  "license": "Apache-2.0",
+  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "concurrently \"npm:gatsby:develop\" \"npm:slicemachine\" --names \"gatsby,slicemachine\" --prefix-colors blue,magenta",
+    "gatsby:develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@prismicio/client": "^6.6.4",
@@ -24,7 +24,6 @@
     "gatsby-plugin-postcss": "^5.20.0",
     "gatsby-plugin-prismic-previews": "^5.2.8",
     "gatsby-source-prismic": "^5.2.9",
-    "postcss": "^8.4.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
@@ -32,8 +31,10 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "autoprefixer": "^10.4.8",
     "concurrently": "^7.3.0",
+    "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
+    "slice-machine-ui": "^0.4.2",
     "tailwindcss": "^3.1.8"
   }
 }

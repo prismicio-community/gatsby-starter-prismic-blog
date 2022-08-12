@@ -1,0 +1,20 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "quote": [
+        {
+          "type": "heading2",
+          "text": "Village",
+          "spans": []
+        }
+      ],
+      "source": "difficulty"
+    },
+    "slice_type": "quote"
+  }
+]
