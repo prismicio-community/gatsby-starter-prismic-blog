@@ -4,6 +4,7 @@ export const useNavigation = () => {
   const queryData = useStaticQuery(graphql`
     query Navigation {
       prismicNavigation {
+        _previewable
         data {
           homepageLabel {
             text

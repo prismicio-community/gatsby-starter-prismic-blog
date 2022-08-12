@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import { PrismicLink } from "@prismicio/react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
 import { useSettings } from "../hooks/useSettings";
 
@@ -84,7 +85,7 @@ const Page = ({ data }) => {
   );
 };
 
-export default Page;
+export default withPrismicPreview(Page);
 
 export const Head = () => {
   const settings = useSettings();
@@ -101,6 +102,7 @@ export const query = graphql`
       }
     ) {
       nodes {
+        _previewable
         url
         first_publication_date(formatString: "MMM D, YYYY")
         data {

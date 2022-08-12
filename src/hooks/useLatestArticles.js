@@ -11,6 +11,7 @@ export const useLatestArticles = () => {
         limit: 3
       ) {
         nodes {
+          _previewable
           url
           first_publication_date(formatString: "MMM D, YYYY")
           data {

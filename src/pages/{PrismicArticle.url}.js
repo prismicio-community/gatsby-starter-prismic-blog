@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import { PrismicLink, SliceZone } from "@prismicio/react";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 
 import { useLatestArticles } from "../hooks/useLatestArticles";
 import { useSettings } from "../hooks/useSettings";
@@ -73,7 +74,7 @@ const Article = ({ data }) => {
   );
 };
 
-export default Article;
+export default withPrismicPreview(Article);
 
 export const Head = ({ data }) => {
   const article = data.prismicArticle;

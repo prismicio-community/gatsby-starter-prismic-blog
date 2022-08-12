@@ -4,6 +4,7 @@ export const useSettings = () => {
   const queryData = useStaticQuery(graphql`
     query Settings {
       prismicSettings {
+        _previewable
         data {
           name {
             text
