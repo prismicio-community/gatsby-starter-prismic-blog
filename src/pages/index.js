@@ -39,7 +39,7 @@ const Article = ({ article }) => {
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
       <PrismicLink href={article.url} tabIndex="-1">
-        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
+        <div className="relative aspect-[4/3] bg-gray-100">
           {featuredImage.gatsbyImageData && (
             <GatsbyImage
               image={featuredImage.gatsbyImageData}
