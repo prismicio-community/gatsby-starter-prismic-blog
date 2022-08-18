@@ -1,44 +1,40 @@
 {
-  "name": "gatsbyjs-blog",
-  "description": "Sample blog built with Gatsby.js using Prismic headless CMS",
-  "author": "Prismic",
-  "dependencies": {
-    "@prismicio/helpers": "^2.0.0-beta.6",
-    "@prismicio/react": "^2.0.0",
-    "gatsby": "^4.3.0",
-    "gatsby-plugin-image": "^2.3.0",
-    "gatsby-plugin-manifest": "^4.3.0",
-    "gatsby-plugin-prismic-previews": "^5.2.1",
-    "gatsby-plugin-react-helmet": "^5.3.0",
-    "gatsby-plugin-sass": "^5.3.0",
-    "gatsby-plugin-sharp": "^4.3.0",
-    "gatsby-source-filesystem": "^4.3.0",
-    "gatsby-source-prismic": "^5.2.3",
-    "node-sass": "^6.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
-  },
-  "devDependencies": {
-    "dotenv": "^10.0.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.0"
-  },
+  "name": "gatsby-starter-prismic-blog",
+  "version": "0.0.0",
+  "private": true,
   "license": "Apache-2.0",
+  "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "format": "prettier --write \"**/*.{js,jsx,json,scss,md}\"",
+    "develop": "concurrently \"npm:gatsby:develop\" \"npm:slicemachine\" --names \"gatsby,slicemachine\" --prefix-colors blue,magenta",
+    "gatsby:develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "start:prod": "npm run clean && npm run build && npm run serve"
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prismicio/gatsby-blog"
+  "dependencies": {
+    "@prismicio/client": "^6.6.4",
+    "@prismicio/helpers": "^2.3.3",
+    "@prismicio/react": "^2.4.4",
+    "clsx": "^1.2.1",
+    "gatsby": "^4.20.0",
+    "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-postcss": "^5.20.0",
+    "gatsby-plugin-prismic-previews": "^5.2.8",
+    "gatsby-source-prismic": "^5.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "slice-machine-ui": "^0.4.2",
+    "tailwindcss": "^3.1.8"
   }
 }

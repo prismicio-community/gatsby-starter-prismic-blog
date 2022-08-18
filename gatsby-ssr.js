@@ -1,20 +1,24 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import { PrismicProvider } from '@prismicio/react'
-import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews'
+import "./src/global.css";
 
-import { repositoryConfigs } from './src/utils/prismicPreviews'
+export { wrapRootElement } from "./src/wrapRootElement";
 
-import './src/stylesheets/main.scss'
-
-export const wrapRootElement = ({ element }) => (
-  <PrismicProvider
-    internalLinkComponent={({ href, ...props }) => (
-      <Link to={href} {...props} />
-    )}
-  >
-    <PrismicPreviewProvider repositoryConfigs={repositoryConfigs}>
-      {element}
-    </PrismicPreviewProvider>
-  </PrismicProvider>
-)
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link
+      key="google-fonts.googleapis.com-preconnect"
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />,
+    <link
+      key="google-fonts.gstatic.com-preconnect"
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossOrigin="true"
+    />,
+    <link
+      key="google-fonts"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />,
+  ]);
+};

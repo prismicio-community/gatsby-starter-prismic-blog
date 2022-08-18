@@ -1,0 +1,54 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
+      },
+      "caption": [
+        {
+          "type": "paragraph",
+          "text": "Nisi qui cupidatat velit reprehenderit. Dolor amet deserunt consectetur laborum non occaecat. Anim consectetur enim est aute anim tempor ea aute laboris ipsum.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "image"
+  },
+  {
+    "variation": "wide",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "image": {
+        "dimensions": {
+          "width": 900,
+          "height": 500
+        },
+        "alt": null,
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a"
+      },
+      "caption": [
+        {
+          "type": "paragraph",
+          "text": "Cillum veniam cupidatat deserunt minim sit ullamco eu eiusmod eiusmod aliqua nulla tempor esse laboris mollit.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "image"
+  }
+]

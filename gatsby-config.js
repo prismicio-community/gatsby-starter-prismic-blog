@@ -1,57 +1,55 @@
-const path = require('path')
-const dotenv = require('dotenv')
+const path = require("path");
+const fs = require("fs");
 
-dotenv.config()
+const customTypeModels = fs
+  .readdirSync("customtypes", { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) =>
+    require(path.resolve("customtypes", entry.name, "index.json"))
+  );
 
-const prismicConfig = require('./prismic-configuration')
+const sharedSliceModels = fs
+  .readdirSync(path.join("src", "slices"), { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) =>
+    require(path.resolve("src", "slices", entry.name, "model.json"))
+  );
+
+const routes = [
+  {
+    type: "article",
+    path: "/articles/:uid",
+  },
+  {
+    type: "page",
+    path: "/:uid",
+  },
+];
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Prismic Blog',
-    description: 'Blog example for Gatsby & Prismic',
+    title: `Blog`,
+    siteUrl: `https://www.yourdomain.tld`,
   },
+  jsxRuntime: "automatic",
   plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
     {
-      resolve: 'gatsby-source-prismic',
+      resolve: "gatsby-source-prismic",
       options: {
-        repositoryName: prismicConfig.prismicRepo,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        linkResolver: require('./src/utils/linkResolver').linkResolver,
-        schemas: {
-          bloghome: require('./custom_types/bloghome.json'),
-          post: require('./custom_types/post.json'),
-        },
+        repositoryName: "nextjs-starter-prismic-blog",
+        customTypeModels,
+        sharedSliceModels,
+        routes,
       },
     },
     {
-      resolve: 'gatsby-plugin-prismic-previews',
+      resolve: "gatsby-plugin-prismic-previews",
       options: {
-        repositoryName: prismicConfig.prismicRepo,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-      },
-    },
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: path.resolve(__dirname, 'src', 'images', 'favicon.png'),
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.resolve(__dirname, 'src', 'images'),
+        repositoryName: "nextjs-starter-prismic-blog",
+        routes,
       },
     },
   ],
-}
+};
