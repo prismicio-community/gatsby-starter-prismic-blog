@@ -19,7 +19,7 @@
     "@prismicio/helpers": "^2.3.3",
     "@prismicio/react": "^2.4.4",
     "clsx": "^1.2.1",
-    "gatsby": "^4.21.0",
+    "gatsby": "^4.21.1",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-postcss": "^5.21.0",
     "gatsby-plugin-prismic-previews": "^5.2.8",
