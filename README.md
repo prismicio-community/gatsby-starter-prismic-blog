@@ -30,7 +30,7 @@ The commands will do the following:
 When you're ready to start your project, run the following command:
 
 ```sh
-npm run dev
+npm run develop
 ```
 
 ## Documentation
