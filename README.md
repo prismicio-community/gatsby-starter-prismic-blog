@@ -13,15 +13,13 @@ This sample blog is an excellent starting point to explore [Gatsby][gatsby] and 
 
 ## 🚀 Quick Start
 
-To start a new project using this starter, run the following commands in your terminal:
+To start a new project using this starter, run the following command in your terminal:
 
 ```sh
-npx degit prismicio-community/gatsby-starter-prismic-blog your-project-name
-cd your-project-name
-npx @slicemachine/init
+npx prismic-cli@latest theme --theme-url https://github.com/prismicio-community/gatsby-starter-prismic-blog --conf sm.json
 ```
 
-The commands will do the following:
+The command will do the following:
 
 1. Start a new Gatsby project using this starter.
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].

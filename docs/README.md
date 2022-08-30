@@ -13,15 +13,13 @@ This page covers how to use **Prismic + Gatsby Blog Starter** with Prismic.
 
 ## 🚀 Quick Start
 
-To start a new project using this starter, run the following commands in your terminal:
+To start a new project using this starter, run the following command in your terminal:
 
 ```sh
-npx degit prismicio-community/gatsby-starter-prismic-blog your-project-name
-cd your-project-name
-npx @slicemachine/init
+npx prismic-cli@latest theme --theme-url https://github.com/prismicio-community/gatsby-starter-prismic-blog --conf sm.json
 ```
 
-The commands will do the following:
+The command will do the following:
 
 1. Start a new Gatsby project using this starter.
 2. Ask you to log in to Prismic or [create an account][prismic-sign-up].
@@ -87,16 +85,16 @@ There are two steps to rendering content from Prismic in your Gatsby project:
 Here are some of the files in your project that you can edit:
 
 - `gatsby-config.js` - This file includes configuration for your Gatsby app and how it pulls in content from Prismic.
-- `pages/index.js` - This is the app homepage.
-- `pages/{PrismicPage.url}.js` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `pages/{PrismicArticle.url}.js` - This is the article page component, which queries and renders an article document from your Prismic repository based on the UID.
-- `pages/api/contact.js` - This is the API endpoint for your contact form. To use the contact form, send a POST request to a back end from this endpoint.
-- `pages/api/sign-up.js` - This is the API endpoint for your newsletter form. To allow signups, send a POST request to a newsletter service like Mailchimp.
-- `slices/\*/index.js` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
+- `src/pages/index.js` - This is the app homepage.
+- `src/pages/{PrismicPage.url}.js` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
+- `src/pages/{PrismicArticle.url}.js` - This is the article page component, which queries and renders an article document from your Prismic repository based on the UID.
+- `src/api/contact.js` - This is the API endpoint for your contact form. To use the contact form, send a POST request to a back end from this endpoint.
+- `src/api/sign-up.js` - This is the API endpoint for your newsletter form. To allow signups, send a POST request to a newsletter service like Mailchimp.
+- `src/slices/\*/index.js` - Each Slice in your project has an index.js file that renders the Slice component. Edit this file to customize your Slices.
 
 These are important files that you should leave as-is:
 
-- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
+- `src/slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.js file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
 
 Learn more about how to edit your components with [Query Data with Gatsby](https://prismic.io/docs/technologies/query-gatsby) and [Template Content in Gatsby](https://prismic.io/docs/technologies/template-content-gatsby).
 
