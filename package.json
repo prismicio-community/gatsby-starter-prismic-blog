@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
-    "concurrently": "^7.4.0",
+    "concurrently": "^7.5.0",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
