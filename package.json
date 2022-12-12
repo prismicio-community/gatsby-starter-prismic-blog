@@ -30,7 +30,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
-    "postcss": "^8.4.16",
+    "postcss": "^8.4.20",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "slice-machine-ui": "^0.4.2",
